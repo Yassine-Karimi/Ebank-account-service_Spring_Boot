@@ -7,8 +7,10 @@ import lombok.NoArgsConstructor;
 import ma.enset.Ebankaccountservice.enums.AccountType;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
-import java.sql.Date;
+import java.util.Date;
 
 @Entity
 @Data
@@ -18,8 +20,9 @@ public class BankAccount
     @Id
     private String id;
     private Date createDate;
-    private double balance;
+    private Double balance;
     private String currency;
+    @Enumerated(EnumType.STRING)
     private AccountType type;
 
 }
